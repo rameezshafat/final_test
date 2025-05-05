@@ -1,0 +1,32 @@
+
+'''
+    How many  days, months and years will sandeep take?
+'''
+
+# Inputs
+total_distance_km = 10000  # total distance to be covered
+avg_speed_kmph = 15        # average speed in km/h
+hours_per_day = 6          # hours Sandeep cycles per day
+
+# Total time in hours and days
+total_hours = total_distance_km / avg_speed_kmph
+total_days = total_hours / hours_per_day
+
+# Break down time
+years = int(total_days // 365)
+remaining_days = total_days - (years * 365)
+
+months = int(remaining_days // 30)
+remaining_days -= months * 30
+
+days = int(remaining_days)
+remaining_fraction = remaining_days - days
+
+hours = int(remaining_fraction * 24)
+minutes = int((remaining_fraction * 24 - hours) * 60)
+
+# Output
+print(f"Time required: {years} years, {months} months, {days} days, {hours} hours, {minutes} minutes")
+
+
+
